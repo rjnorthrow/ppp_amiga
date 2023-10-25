@@ -1,0 +1,14 @@
+---
+# defaults file for ppp_amiga
+
+# The directory where you will find the PPP configuration
+ppp_config_dir: etc/ppp
+
+# The PPP peers directory
+ppp_peers_dir: "{{ ppp_config_dir }}/peers"
+
+# Which serial port to use
+ppp_serial_device: /dev/ttyUSB0
+
+# Which speed to choose for the serial connection
+ppp_serial_speed: 57600

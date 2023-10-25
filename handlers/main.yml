@@ -1,0 +1,14 @@
+---
+# handlers file for ppp_amiga
+
+# Restore the IPtables rules from the default file (IPv4 only)
+- name: restore firewall
+  shell: /sbin/iptables-restore < /etc/iptables/rules.v4
+
+# Restart the newly-created pppd@amiga service
+- name: restart ppp_amiga
+  systemd:
+    name: pppd@amiga
+    enabled: yes
+    daemon-reload: yes
+    state: restarted
